@@ -1,0 +1,9 @@
+type Article {
+  id: ID!
+  title: String
+  intro: String
+}
+
+type Query {
+  article: Article
+}
