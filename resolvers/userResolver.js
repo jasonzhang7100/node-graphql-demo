@@ -3,9 +3,7 @@ import UserModel from '../Models/UserModel';
 
 export default {
   Query: {
-    userList: () => {
-      UserModel.getUserList();
-    },
+    userList: () => UserModel.getUserList(),
   },
   Mutation: {
     createUser: (parent, args) => {
