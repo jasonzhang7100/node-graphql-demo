@@ -5,5 +5,9 @@ type Article {
 }
 
 type Query {
-  article: Article
+  articleList: [Article]
+}
+
+type Mutation {
+  createArticle(title: String, intro: String): Article
 }

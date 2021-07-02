@@ -1,11 +1,14 @@
-import { nanoid } from 'nanoid';
+import ArticleModel from '../Models/ArticleModel';
 
 export default {
   Query: {
-    article: () => ({
-      id: nanoid(),
-      title: 'an article',
-      intro: 'about sex',
-    }),
+    articleList: () => ArticleModel.getArticleList(),
+  },
+  Mutation: {
+    createArticle: (parent, args) =>
+      new ArticleModel({
+        title: args.title,
+        intro: args.intro,
+      }).createArticle(),
   },
 };
