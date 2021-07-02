@@ -8,6 +8,10 @@ export default class UserModel {
     this.age = age;
   }
 
+  static getUserList() {
+    return db.getData()['users'];
+  }
+
   createUser() {
     const usersData = db.getData()['users'];
     usersData.push({
@@ -17,9 +21,5 @@ export default class UserModel {
     });
     db.setData('users', usersData);
     return this;
-  }
-
-  static getUserList() {
-    return db.getData()['users'];
   }
 }
